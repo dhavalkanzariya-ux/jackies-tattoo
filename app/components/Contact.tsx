@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-black text-white py-4 md:py-8 px-6"
+      className="bg-black text-white py-8 px-6"
     >
       <div className="max-w-7xl mx-auto">
 
@@ -33,23 +33,24 @@ export default function Contact() {
             border
             border-yellow-500/30
             rounded-3xl
-            p-8
+            p-6
             hover:border-yellow-500
             transition
             "
           >
 
-            <h3 className="text-3xl font-bold text-yellow-500 mb-5">
+            <h3 className="text-3xl font-bold text-yellow-500 mb-4">
               Get In Touch
             </h3>
 
 
-            <p className="text-gray-300 leading-7 mb-5">
+            <p className="text-gray-300 leading-7 mb-4">
               Ready for your next tattoo? Contact Jackie's Tattoo Studio today.
             </p>
 
 
             <div className="space-y-4 text-gray-300">
+
 
               <a
                 href="tel:+91XXXXXXXXXX"
@@ -72,7 +73,9 @@ export default function Contact() {
                 📸 Instagram: @jackies_tattoo_piercing
               </a>
 
+
             </div>
+
 
 
             <a
@@ -101,13 +104,12 @@ export default function Contact() {
 
           {/* Form */}
 
-
           <div
             className="
             border
             border-yellow-500/30
             rounded-3xl
-            p-8
+            p-6
             "
           >
 
@@ -121,7 +123,7 @@ export default function Contact() {
               border-gray-600
               p-4
               rounded-xl
-              mb-4
+              mb-3
               text-white
               outline-none
               focus:border-yellow-500
@@ -139,7 +141,7 @@ export default function Contact() {
               border-gray-600
               p-4
               rounded-xl
-              mb-4
+              mb-3
               text-white
               outline-none
               focus:border-yellow-500
@@ -149,7 +151,7 @@ export default function Contact() {
 
             <textarea
               placeholder="Tell us about your tattoo idea"
-              rows={5}
+              rows={4}
               className="
               w-full
               bg-transparent
@@ -157,7 +159,7 @@ export default function Contact() {
               border-gray-600
               p-4
               rounded-xl
-              mb-5
+              mb-4
               text-white
               outline-none
               focus:border-yellow-500
@@ -185,7 +187,6 @@ export default function Contact() {
 
 
         </div>
-
 
       </div>
     </section>
