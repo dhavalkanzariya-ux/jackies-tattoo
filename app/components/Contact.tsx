@@ -26,25 +26,16 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
 
-          {/* Contact Info */}
+          {/* Contact Information */}
 
-          <div
-            className="
-            border
-            border-yellow-500/30
-            rounded-3xl
-            p-6
-            hover:border-yellow-500
-            transition
-            "
-          >
+          <div className="border border-yellow-500/30 rounded-3xl p-6">
 
             <h3 className="text-3xl font-bold text-yellow-500 mb-4">
               Get In Touch
             </h3>
 
 
-            <p className="text-gray-300 leading-7 mb-4">
+            <p className="text-gray-300 mb-4">
               Ready for your next tattoo? Contact Jackie's Tattoo Studio today.
             </p>
 
@@ -53,10 +44,10 @@ export default function Contact() {
 
 
               <a
-                href="tel:+91XXXXXXXXXX"
+                href="tel:+918000856870"
                 className="block hover:text-yellow-500 transition"
               >
-                📞 Phone: +91 XXXXX XXXXX
+                📞 Phone: +91 8000856870
               </a>
 
 
@@ -66,7 +57,7 @@ export default function Contact() {
 
 
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/jackies_tattoo_piercing"
                 target="_blank"
                 className="block hover:text-yellow-500 transition"
               >
@@ -77,9 +68,8 @@ export default function Contact() {
             </div>
 
 
-
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/918000856870"
               target="_blank"
               className="
               inline-block
@@ -102,16 +92,12 @@ export default function Contact() {
 
 
 
-          {/* Form */}
 
-          <div
-            className="
-            border
-            border-yellow-500/30
-            rounded-3xl
-            p-6
-            "
-          >
+          {/* Contact Form */}
+
+
+          <div className="border border-yellow-500/30 rounded-3xl p-6">
+
 
             <input
               type="text"
@@ -187,6 +173,7 @@ export default function Contact() {
 
 
         </div>
+
 
       </div>
     </section>
