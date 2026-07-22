@@ -25,7 +25,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="bg-black text-white py-20 md:py-28 px-6"
+      className="bg-black text-white py-12 md:py-16 px-6"
     >
       <div className="max-w-7xl mx-auto">
 
