@@ -21,7 +21,7 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#home"
-          className="text-3xl font-bold text-yellow-500 tracking-wider"
+          className="text-2xl font-bold text-yellow-500 tracking-wider"
         >
           JACKIE'S
         </a>
@@ -79,7 +79,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-black border-t border-yellow-500/20 px-6 py-5">
+        <div className="md:hidden bg-black border-t border-yellow-500/20 px-6 py-3">
 
           {menuItems.map((item) => (
             <a
