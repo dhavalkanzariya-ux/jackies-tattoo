@@ -9,33 +9,86 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="bg-black text-white py-16 md:py-24 px-6"
+      className="bg-black text-white py-20 md:py-28 px-6"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
-        <div className="text-center mb-8 md:mb-12">
+        {/* Heading */}
+        <div className="text-center mb-12">
+
           <p className="text-yellow-500 tracking-[6px] uppercase text-sm">
             Our Work
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-4">
+          <h2 className="text-4xl md:text-6xl font-bold mt-4">
             Tattoo Gallery
           </h2>
+
+          <p className="text-gray-400 mt-4 max-w-xl mx-auto">
+            Explore our custom tattoo designs created with passion,
+            precision and artistic detail.
+          </p>
+
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {/* Gallery */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {tattoos.map((image, index) => (
+
             <div
               key={index}
-              className="overflow-hidden rounded-2xl border border-yellow-500/20"
+              className="group relative overflow-hidden rounded-3xl border border-yellow-500/30 bg-black shadow-lg"
             >
+
               <img
                 src={image}
                 alt="Jackie's Tattoo Work"
-                className="w-full h-80 md:h-[420px] object-cover object-center hover:scale-105 transition duration-500"
+                className="
+                  w-full 
+                  h-[420px]
+                  object-cover
+                  object-center
+                  transition
+                  duration-700
+                  group-hover:scale-110
+                "
               />
+
+
+              {/* Hover Overlay */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-black/0
+                  group-hover:bg-black/40
+                  transition
+                  duration-500
+                  flex
+                  items-end
+                  p-6
+                "
+              >
+
+                <h3
+                  className="
+                    text-yellow-500
+                    font-bold
+                    text-xl
+                    opacity-0
+                    group-hover:opacity-100
+                    transition
+                  "
+                >
+                  Custom Tattoo Artwork
+                </h3>
+
+              </div>
+
             </div>
+
           ))}
 
         </div>
