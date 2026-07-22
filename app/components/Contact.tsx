@@ -1,10 +1,44 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Contact() {
+
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [idea, setIdea] = useState("");
+
+
+  const sendWhatsApp = () => {
+
+    const message = `
+Hello Jackie's Tattoo Studio,
+
+Name: ${name}
+Phone: ${phone}
+
+Tattoo Idea:
+${idea}
+
+I want to book an appointment.
+`;
+
+    const whatsappURL =
+      `https://wa.me/918000856870?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+
+  };
+
+
   return (
     <section
       id="contact"
       className="bg-black text-white py-8 px-6"
     >
+
       <div className="max-w-7xl mx-auto">
+
 
         <div className="text-center mb-6">
 
@@ -23,12 +57,13 @@ export default function Contact() {
         </div>
 
 
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
 
-          {/* Contact Information */}
 
           <div className="border border-yellow-500/30 rounded-3xl p-6">
+
 
             <h3 className="text-3xl font-bold text-yellow-500 mb-4">
               Get In Touch
@@ -68,21 +103,11 @@ export default function Contact() {
             </div>
 
 
+
             <a
               href="https://wa.me/918000856870"
               target="_blank"
-              className="
-              inline-block
-              mt-6
-              bg-yellow-500
-              text-black
-              px-8
-              py-3
-              rounded-full
-              font-bold
-              hover:bg-yellow-400
-              transition
-              "
+              className="inline-block mt-6 bg-yellow-500 text-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition"
             >
               WhatsApp Now
             </a>
@@ -93,8 +118,6 @@ export default function Contact() {
 
 
 
-          {/* Contact Form */}
-
 
           <div className="border border-yellow-500/30 rounded-3xl p-6">
 
@@ -102,68 +125,36 @@ export default function Contact() {
             <input
               type="text"
               placeholder="Your Name"
-              className="
-              w-full
-              bg-transparent
-              border
-              border-gray-600
-              p-4
-              rounded-xl
-              mb-3
-              text-white
-              outline-none
-              focus:border-yellow-500
-              "
+              value={name}
+              onChange={(e)=>setName(e.target.value)}
+              className="w-full bg-transparent border border-gray-600 p-4 rounded-xl mb-3 text-white outline-none focus:border-yellow-500"
             />
+
 
 
             <input
               type="text"
               placeholder="Phone Number"
-              className="
-              w-full
-              bg-transparent
-              border
-              border-gray-600
-              p-4
-              rounded-xl
-              mb-3
-              text-white
-              outline-none
-              focus:border-yellow-500
-              "
+              value={phone}
+              onChange={(e)=>setPhone(e.target.value)}
+              className="w-full bg-transparent border border-gray-600 p-4 rounded-xl mb-3 text-white outline-none focus:border-yellow-500"
             />
+
 
 
             <textarea
               placeholder="Tell us about your tattoo idea"
               rows={4}
-              className="
-              w-full
-              bg-transparent
-              border
-              border-gray-600
-              p-4
-              rounded-xl
-              mb-4
-              text-white
-              outline-none
-              focus:border-yellow-500
-              "
+              value={idea}
+              onChange={(e)=>setIdea(e.target.value)}
+              className="w-full bg-transparent border border-gray-600 p-4 rounded-xl mb-4 text-white outline-none focus:border-yellow-500"
             />
 
 
+
             <button
-              className="
-              bg-yellow-500
-              text-black
-              px-8
-              py-3
-              rounded-full
-              font-bold
-              hover:bg-yellow-400
-              transition
-              "
+              onClick={sendWhatsApp}
+              className="bg-yellow-500 text-black px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition"
             >
               Send Request
             </button>
@@ -172,10 +163,12 @@ export default function Contact() {
           </div>
 
 
+
         </div>
 
 
       </div>
+
     </section>
   );
 }
