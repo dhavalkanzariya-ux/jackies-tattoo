@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Cinzel } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
       className={`${poppins.variable} ${cinzel.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Navbar />
         {children}
       </body>
     </html>

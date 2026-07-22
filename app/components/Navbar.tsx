@@ -14,43 +14,43 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-yellow-500/20">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-lg border-b border-yellow-500/20">
 
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
         {/* Logo */}
         <a
           href="#home"
-          className="text-2xl font-bold text-yellow-500 tracking-wider"
+          className="text-2xl font-bold text-yellow-500"
         >
           JACKIE'S
         </a>
 
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 text-white">
+        <div className="hidden md:flex items-center gap-8">
 
           {menuItems.map((item) => (
-            <li key={item.name}>
-              <a
-                href={item.link}
-                className="hover:text-yellow-500 transition duration-300"
-              >
-                {item.name}
-              </a>
-            </li>
+            <a
+              key={item.name}
+              href={item.link}
+              className="text-white hover:text-yellow-500 transition"
+            >
+              {item.name}
+            </a>
           ))}
 
-        </ul>
+        </div>
 
 
-        {/* Buttons */}
-        <div className="hidden md:flex items-center gap-3">
+
+        {/* Desktop Button */}
+        <div className="hidden md:flex gap-3">
 
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/jackies_tattoo_piercing"
             target="_blank"
-            className="border border-yellow-500 text-yellow-500 px-5 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition"
+            className="border border-yellow-500 text-yellow-500 px-5 py-2 rounded-full"
           >
             Instagram
           </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
 
           <a
             href="#contact"
-            className="bg-yellow-500 text-black px-6 py-2 rounded-full font-bold hover:bg-yellow-400 transition"
+            className="bg-yellow-500 text-black px-6 py-2 rounded-full font-bold"
           >
             Book Now
           </a>
@@ -66,34 +66,72 @@ export default function Navbar() {
         </div>
 
 
+
+
         {/* Mobile Button */}
         <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-yellow-500 text-3xl"
+          type="button"
+          onClick={() => setOpen((prev) => !prev)}
+          className="md:hidden text-yellow-500 text-4xl cursor-pointer"
         >
-          ☰
+          {open ? "✕" : "☰"}
         </button>
+
 
       </div>
 
 
+
       {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden bg-black border-t border-yellow-500/20 px-6 py-3">
 
-          {menuItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.link}
-              onClick={() => setOpen(false)}
-              className="block text-white py-3 hover:text-yellow-500"
-            >
-              {item.name}
-            </a>
-          ))}
+      <div
+        className={`
+          md:hidden
+          bg-black
+          border-t
+          border-yellow-500/20
+          px-6
+          overflow-hidden
+          transition-all
+          duration-300
+          ${open ? "max-h-[500px] py-5" : "max-h-0"}
+        `}
+      >
 
-        </div>
-      )}
+        {menuItems.map((item) => (
+
+          <a
+            key={item.name}
+            href={item.link}
+            onClick={() => setOpen(false)}
+            className="block text-white py-3 hover:text-yellow-500"
+          >
+            {item.name}
+          </a>
+
+        ))}
+
+
+        <a
+          href="https://instagram.com/jackies_tattoo_piercing"
+          target="_blank"
+          className="block text-yellow-500 py-3"
+        >
+          📸 Instagram
+        </a>
+
+
+        <a
+          href="#contact"
+          onClick={() => setOpen(false)}
+          className="block bg-yellow-500 text-black text-center py-3 rounded-full font-bold mt-3"
+        >
+          Book Now
+        </a>
+
+
+      </div>
+
 
     </nav>
   );
