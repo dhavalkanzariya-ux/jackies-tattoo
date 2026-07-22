@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-cover bg-center relative flex items-center justify-center"
+      className="h-[85vh] bg-cover bg-center relative flex items-center justify-center"
       style={{
         backgroundImage: "url('/images/hero.png')",
       }}
